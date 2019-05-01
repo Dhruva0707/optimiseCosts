@@ -1,0 +1,8 @@
+prefix=/home/dhruva/optimiseCosts/install
+
+Name: optimise
+Description: Description of optimise
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/dhruva/optimiseCosts/install/lib 
+Requires: 
