@@ -1,0 +1,1 @@
+nelderMead.d: ../nelderMead.cpp

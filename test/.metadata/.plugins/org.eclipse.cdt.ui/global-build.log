@@ -1,0 +1,63 @@
+11:44:11 **** Incremental Build of configuration Debug for project nelderMead ****
+make all 
+Building file: ../nelderMead.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"nelderMead.d" -MT"nelderMead.d" -o "nelderMead.o" "../nelderMead.cpp"
+Finished building: ../nelderMead.cpp
+ 
+Building target: nelderMead
+Invoking: Cross G++ Linker
+g++  -o "nelderMead"  ./nelderMead.o   
+Finished building target: nelderMead
+ 
+11:44:18 **** Incremental Build of configuration Debug for project nelderMead ****
+make all 
+make: Nothing to be done for 'all'.
+12:04:11 **** Incremental Build of configuration Debug for project nelderMead ****
+make all 
+Building file: ../nelderMead.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"nelderMead.d" -MT"nelderMead.d" -o "nelderMead.o" "../nelderMead.cpp"
+Finished building: ../nelderMead.cpp
+ 
+Building target: nelderMead
+Invoking: Cross G++ Linker
+g++  -o "nelderMead"  ./nelderMead.o   
+Finished building target: nelderMead
+ 
+12:13:54 **** Incremental Build of configuration Debug for project nelderMead ****
+make all 
+Building file: ../nelderMead.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"nelderMead.d" -MT"nelderMead.d" -o "nelderMead.o" "../nelderMead.cpp"
+Finished building: ../nelderMead.cpp
+ 
+Building target: nelderMead
+Invoking: Cross G++ Linker
+g++  -o "nelderMead"  ./nelderMead.o   
+Finished building target: nelderMead
+ 
+12:15:00 **** Incremental Build of configuration Debug for project nelderMead ****
+make all 
+Building file: ../nelderMead.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"nelderMead.d" -MT"nelderMead.d" -o "nelderMead.o" "../nelderMead.cpp"
+Finished building: ../nelderMead.cpp
+ 
+Building target: nelderMead
+Invoking: Cross G++ Linker
+g++  -o "nelderMead"  ./nelderMead.o   
+Finished building target: nelderMead
+ 
+12:16:23 **** Incremental Build of configuration Debug for project nelderMead ****
+make all 
+Building file: ../nelderMead.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"nelderMead.d" -MT"nelderMead.d" -o "nelderMead.o" "../nelderMead.cpp"
+Finished building: ../nelderMead.cpp
+ 
+Building target: nelderMead
+Invoking: Cross G++ Linker
+g++  -o "nelderMead"  ./nelderMead.o   
+Finished building target: nelderMead
+ 

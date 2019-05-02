@@ -1,0 +1,143 @@
+/*****************************************************************
+ *
+ * Title: Nelder Mead Algorithm
+ * Author: Dhruva Bhatia
+ * Date: 1st May 2019
+ *
+ * Description:
+ * This is a basic program to test the Nelder mead cost optimisation
+ * algorithm. It takes in a starting cost from the user and then
+ * attempts to find the costs that result in the minimum cost. Overall,
+ * the algorithm is continued for 50 iterations.
+ *
+ *****************************************************************/
+#include <iostream>
+
+using namespace std;
+
+// The cost function attempts to return the cost based on the input parameters.
+float cost(float x,float y,float z)
+{
+	// x represents the array of input values passed to the function
+	// the function may be determined by the user to either send these values to
+	// another application and use the desired vs actual response of the application
+	// to identify the cost based on these parameters.
+	// In this case, we are trying to optimise a 3D quadratic equation, where the
+	// the best input parameters are absolute and equal to the values corresponding
+	// to x0, y0 and z0 as described below:
+	float x0 = 1;
+	float y0 = 3;
+	float z0 = 0.5; // here we have taken these values at random
+	float final_cost = (x-x0)*(x-x0)+   //continued on next line
+			           (y-y0)*(y-y0)+   //continued on next line
+					   (z-z0)*(z-z0);
+	return final_cost;
+}
+
+int main(int argc, char** argv)
+{	// in this case, there is no need to pass parameters to the main function,
+	// I just do it, for practice sake, and use in ROS.
+
+	// 1. First, we create an array to store the variables and there respective costs
+	//		a. since we are optimising 3 variables, there will be 4 different data
+	//         points. so the dimensions of the variable and cost matrix is 4x4
+	//      b. columns as: [x y z cost] and each row specifing a particular data point
+	float x[4][4];
+	// 2. we get the first input values from the user
+	cout<<"Enter the first starting value: ";
+	cin>>x[0][0];
+
+	cout<<"Enter the second starting value: ";
+	cin>>x[0][1];
+
+	cout<<"Enter the third starting value: ";
+	cin>>x[0][2];
+	//3. initialise the first four rows
+	//		a. first initialise the first parameter values
+	x[1][0] = x[0][0]+0.5;
+	x[1][1] = x[0][1];
+	x[1][2] = x[0][2];
+
+	x[2][0] = x[0][0];
+    x[2][1] = x[0][1]+0.5;
+    x[2][2] = x[0][2];
+
+	x[3][0] = x[0][0];
+	x[3][1] = x[0][1];
+	x[3][2] = x[0][2]+0.5;
+	//3.	b. now calculate the cost for each
+	for(int i = 0; i<4; i++)
+	{
+		x[i][3]=cost(x[i][0],x[i][1],x[i][2]);
+	}
+	//3.	c. test if the starting values got set properly
+	for(int i = 0; i<4; i++)
+	{
+		for(int j=0; j<4; j++)
+		{
+			cout<<x[i][j]<<"     ";
+		}
+		cout<<endl;
+	}
+
+	//4. Now, we start a loop that will run for 50 iterations overall, to minimise
+	//   the cost
+	int iteration = 0;
+	while(iteration<50)
+	{
+		//4.a. now we need to find the index with the max cost
+		int max_ind = -1;
+		float max_cost = -1;
+		for(int i=0;i<4;i++)
+		{
+			if(max_cost<x[i][3])
+			{
+				max_cost=x[i][3];
+				max_ind=i;
+			}
+		}
+	// test this out:
+		cout<<max_cost<<endl;
+		for(int i=0; i<4;i++)
+		{
+			cout<<x[max_ind][i]<<"     ";
+		}
+
+	//	b. Now we reflect this point about the centroid of the other three
+	//		// to find the centroid we first sum the all the values
+		float sumx0=0;
+		for(int i=0;i<4;i++)
+		{
+			sumx0=x[i][0];
+		}
+
+		float sumx1=0;
+		for(int i=0;i<4;i++)
+		{
+			sumx1=x[i][1];
+		}
+
+		float sumx2=0;
+		for(int i=0;i<4;i++)
+		{
+			sumx2=x[i][2];
+		}
+
+		float x0_new = 2*((sumx0-x[max_ind][0])/3)-x[max_ind][0];
+		float x1_new = 2*((sumx1-x[max_ind][1])/3)-x[max_ind][1];
+		float x2_new = 2*((sumx2-x[max_ind][2])/3)-x[max_ind][2];
+		float cost_new = cost(x0_new,x1_new,x2_new);
+
+		cout<<x0_new<<" "<<x1_new<<" "<<x2_new<<" "<<cost_new<<endl;
+
+		iteration++;
+	}
+
+
+
+
+
+
+
+
+}
