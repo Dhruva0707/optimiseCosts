@@ -3,6 +3,6 @@ prefix=/home/dhruva/optimiseCosts/install
 Name: optimise
 Description: Description of optimise
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/dhruva/optimiseCosts/install/include
 Libs: -L/home/dhruva/optimiseCosts/install/lib 
 Requires: 

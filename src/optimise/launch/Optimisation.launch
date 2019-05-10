@@ -1,0 +1,6 @@
+<launch>
+  <node name="CostFunction" pkg="optimise" type="CostFunction" />
+  <node name="simplex" pkg="optimise" type="simplex" output="screen" launch-prefix="xterm -e"/>
+
+  <node name="inputs" pkg="optimise" type="takeInput" output="screen" launch-prefix="xterm -e" />
+</launch>
