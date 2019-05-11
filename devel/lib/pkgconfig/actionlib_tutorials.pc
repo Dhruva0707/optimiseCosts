@@ -5,4 +5,4 @@ Description: Description of actionlib_tutorials
 Version: 0.0.0
 Cflags: -I/home/dhruva/optimiseCosts/devel/include
 Libs: -L/home/dhruva/optimiseCosts/devel/lib 
-Requires: 
+Requires: actionlib_msgs

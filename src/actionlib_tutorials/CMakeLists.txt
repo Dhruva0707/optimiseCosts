@@ -108,7 +108,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES actionlib_tutorials
-#  CATKIN_DEPENDS actionlib actionlib_msgs message_generation roscpp rospy std_msgs
+   CATKIN_DEPENDS actionlib_msgs # actionlib message_generation roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
 
@@ -137,6 +137,28 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/actionlib_tutorials_node.cpp)
+
+add_executable(countTo_server src/countTo_server.cpp)
+target_link_libraries(
+	countTo_server
+	${catkin_LIBRARIES}
+)
+add_dependencies(
+	countTo_server
+	${actionlib_tutorials_EXPORTED_TARGET}
+	${catkin_EXPORTED_TARGETS}
+)
+
+add_executable(countTo_client src/countTo_client.cpp)
+target_link_libraries(
+	countTo_client
+	${catkin_LIBRARIES}
+)
+add_dependencies(
+	countTo_client
+	${actionlib_tutorials_EXPORTED_TARGET}
+	${catkin_EXPORTED_TARGETS}
+)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

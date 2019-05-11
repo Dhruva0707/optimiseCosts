@@ -2,7 +2,7 @@
 int32 goal_number
 ---
 #result definition
-bool result
+string completionMessage
 ---
 #feedback
 int32 currentNumber
