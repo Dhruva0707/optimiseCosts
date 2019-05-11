@@ -91,7 +91,7 @@ int main(int argc, char** argv)
 			cout<<"Enter a number (-1 to exit): ";
 			cin>>num;
 			
-			if(num>0)
+			if(num<0)
 			{
 				break;
 				ok = false;
