@@ -1,0 +1,9 @@
+#goal definition
+int32 goal_number
+---
+#result definition
+bool result
+---
+#feedback
+int32 currentNumber
+

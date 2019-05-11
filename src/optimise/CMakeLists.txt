@@ -134,6 +134,10 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/optimise_node.cpp)
 
+add_executable(CostFunction src/CostFunction.cpp)
+target_link_libraries(CostFunction ${catkin_LIBRARIES})
+add_dependencies(CostFunction optimise_generate_messages_cpp)
+
  add_executable(takeInput src/takeInput.cpp)
  target_link_libraries(takeInput ${catkin_LIBRARIES})
  add_dependencies(takeInput optimise_generate_messages_cpp)

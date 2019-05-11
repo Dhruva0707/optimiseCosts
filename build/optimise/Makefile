@@ -181,6 +181,21 @@ takeInput/fast:
 .PHONY : takeInput/fast
 
 # Convenience name for target.
+optimise/CMakeFiles/CostFunction.dir/rule:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f CMakeFiles/Makefile2 optimise/CMakeFiles/CostFunction.dir/rule
+.PHONY : optimise/CMakeFiles/CostFunction.dir/rule
+
+# Convenience name for target.
+CostFunction: optimise/CMakeFiles/CostFunction.dir/rule
+
+.PHONY : CostFunction
+
+# fast build rule for target.
+CostFunction/fast:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f optimise/CMakeFiles/CostFunction.dir/build.make optimise/CMakeFiles/CostFunction.dir/build
+.PHONY : CostFunction/fast
+
+# Convenience name for target.
 optimise/CMakeFiles/optimise_genpy.dir/rule:
 	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f CMakeFiles/Makefile2 optimise/CMakeFiles/optimise_genpy.dir/rule
 .PHONY : optimise/CMakeFiles/optimise_genpy.dir/rule
@@ -615,6 +630,33 @@ _optimise_generate_messages_check_deps_parameter_values/fast:
 	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f optimise/CMakeFiles/_optimise_generate_messages_check_deps_parameter_values.dir/build.make optimise/CMakeFiles/_optimise_generate_messages_check_deps_parameter_values.dir/build
 .PHONY : _optimise_generate_messages_check_deps_parameter_values/fast
 
+src/CostFunction.o: src/CostFunction.cpp.o
+
+.PHONY : src/CostFunction.o
+
+# target to build an object file
+src/CostFunction.cpp.o:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f optimise/CMakeFiles/CostFunction.dir/build.make optimise/CMakeFiles/CostFunction.dir/src/CostFunction.cpp.o
+.PHONY : src/CostFunction.cpp.o
+
+src/CostFunction.i: src/CostFunction.cpp.i
+
+.PHONY : src/CostFunction.i
+
+# target to preprocess a source file
+src/CostFunction.cpp.i:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f optimise/CMakeFiles/CostFunction.dir/build.make optimise/CMakeFiles/CostFunction.dir/src/CostFunction.cpp.i
+.PHONY : src/CostFunction.cpp.i
+
+src/CostFunction.s: src/CostFunction.cpp.s
+
+.PHONY : src/CostFunction.s
+
+# target to generate assembly for a file
+src/CostFunction.cpp.s:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f optimise/CMakeFiles/CostFunction.dir/build.make optimise/CMakeFiles/CostFunction.dir/src/CostFunction.cpp.s
+.PHONY : src/CostFunction.cpp.s
+
 src/simplex.o: src/simplex.cpp.o
 
 .PHONY : src/simplex.o
@@ -679,8 +721,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... install"
-	@echo "... install/local"
 	@echo "... takeInput"
+	@echo "... install/local"
+	@echo "... CostFunction"
 	@echo "... optimise_genpy"
 	@echo "... optimise_genlisp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
@@ -712,6 +755,9 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... optimise_generate_messages_eus"
 	@echo "... _optimise_generate_messages_check_deps_parameter_values"
+	@echo "... src/CostFunction.o"
+	@echo "... src/CostFunction.i"
+	@echo "... src/CostFunction.s"
 	@echo "... src/simplex.o"
 	@echo "... src/simplex.i"
 	@echo "... src/simplex.s"
