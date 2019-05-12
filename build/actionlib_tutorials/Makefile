@@ -56,27 +56,6 @@ CMAKE_BINARY_DIR = /home/dhruva/optimiseCosts/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -99,6 +78,27 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -164,6 +164,36 @@ preinstall/fast:
 depend:
 	cd /home/dhruva/optimiseCosts/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/rule:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/rule
+
+# Convenience name for target.
+multiThread_publisher: actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/rule
+
+.PHONY : multiThread_publisher
+
+# fast build rule for target.
+multiThread_publisher/fast:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/build.make actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/build
+.PHONY : multiThread_publisher/fast
+
+# Convenience name for target.
+actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/rule:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f CMakeFiles/Makefile2 actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/rule
+.PHONY : actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/rule
+
+# Convenience name for target.
+multiThread_subscriber: actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/rule
+
+.PHONY : multiThread_subscriber
+
+# fast build rule for target.
+multiThread_subscriber/fast:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/build.make actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/build
+.PHONY : multiThread_subscriber/fast
 
 # Convenience name for target.
 actionlib_tutorials/CMakeFiles/actionlib_tutorials_generate_messages_py.dir/rule:
@@ -684,16 +714,72 @@ src/countTo_server.cpp.s:
 	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/countTo_server.dir/build.make actionlib_tutorials/CMakeFiles/countTo_server.dir/src/countTo_server.cpp.s
 .PHONY : src/countTo_server.cpp.s
 
+src/multiThread_publisher.o: src/multiThread_publisher.cpp.o
+
+.PHONY : src/multiThread_publisher.o
+
+# target to build an object file
+src/multiThread_publisher.cpp.o:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/build.make actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/src/multiThread_publisher.cpp.o
+.PHONY : src/multiThread_publisher.cpp.o
+
+src/multiThread_publisher.i: src/multiThread_publisher.cpp.i
+
+.PHONY : src/multiThread_publisher.i
+
+# target to preprocess a source file
+src/multiThread_publisher.cpp.i:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/build.make actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/src/multiThread_publisher.cpp.i
+.PHONY : src/multiThread_publisher.cpp.i
+
+src/multiThread_publisher.s: src/multiThread_publisher.cpp.s
+
+.PHONY : src/multiThread_publisher.s
+
+# target to generate assembly for a file
+src/multiThread_publisher.cpp.s:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/build.make actionlib_tutorials/CMakeFiles/multiThread_publisher.dir/src/multiThread_publisher.cpp.s
+.PHONY : src/multiThread_publisher.cpp.s
+
+src/multiThread_subscriber.o: src/multiThread_subscriber.cpp.o
+
+.PHONY : src/multiThread_subscriber.o
+
+# target to build an object file
+src/multiThread_subscriber.cpp.o:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/build.make actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/src/multiThread_subscriber.cpp.o
+.PHONY : src/multiThread_subscriber.cpp.o
+
+src/multiThread_subscriber.i: src/multiThread_subscriber.cpp.i
+
+.PHONY : src/multiThread_subscriber.i
+
+# target to preprocess a source file
+src/multiThread_subscriber.cpp.i:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/build.make actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/src/multiThread_subscriber.cpp.i
+.PHONY : src/multiThread_subscriber.cpp.i
+
+src/multiThread_subscriber.s: src/multiThread_subscriber.cpp.s
+
+.PHONY : src/multiThread_subscriber.s
+
+# target to generate assembly for a file
+src/multiThread_subscriber.cpp.s:
+	cd /home/dhruva/optimiseCosts/build && $(MAKE) -f actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/build.make actionlib_tutorials/CMakeFiles/multiThread_subscriber.dir/src/multiThread_subscriber.cpp.s
+.PHONY : src/multiThread_subscriber.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... test"
 	@echo "... install"
+	@echo "... install/strip"
+	@echo "... multiThread_publisher"
+	@echo "... list_install_components"
+	@echo "... multiThread_subscriber"
 	@echo "... actionlib_tutorials_generate_messages_py"
 	@echo "... actionlib_tutorials_gennodejs"
 	@echo "... actionlib_tutorials_genlisp"
@@ -734,6 +820,12 @@ help:
 	@echo "... src/countTo_server.o"
 	@echo "... src/countTo_server.i"
 	@echo "... src/countTo_server.s"
+	@echo "... src/multiThread_publisher.o"
+	@echo "... src/multiThread_publisher.i"
+	@echo "... src/multiThread_publisher.s"
+	@echo "... src/multiThread_subscriber.o"
+	@echo "... src/multiThread_subscriber.i"
+	@echo "... src/multiThread_subscriber.s"
 .PHONY : help
 
 

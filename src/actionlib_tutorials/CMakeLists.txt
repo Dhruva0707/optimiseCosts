@@ -160,6 +160,28 @@ add_dependencies(
 	${catkin_EXPORTED_TARGETS}
 )
 
+add_executable(multiThread_subscriber src/multiThread_subscriber.cpp)
+target_link_libraries(
+	multiThread_subscriber
+	${catkin_LIBRARIES}
+)
+add_dependencies(
+	multiThread_subscriber
+	${actionlib_tutorials_EXPORTED_TARGET}
+	${catkin_EXPORTED_TARGETS}
+)
+
+add_executable(multiThread_publisher src/multiThread_publisher.cpp)
+target_link_libraries(
+	multiThread_publisher
+	${catkin_LIBRARIES}
+)
+add_dependencies(
+	multiThread_publisher
+	${actionlib_tutorials_EXPORTED_TARGET}
+	${catkin_EXPORTED_TARGETS}
+)
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
